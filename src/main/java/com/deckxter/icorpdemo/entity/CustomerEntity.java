@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "customer")
@@ -25,6 +25,6 @@ public class CustomerEntity {
     private Integer years;
 
     @Column(name = "birthday")
-    private Timestamp birthday;
+    private Date birthday;
 
 }

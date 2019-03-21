@@ -1,6 +1,7 @@
 package com.deckxter.icorpdemo.controller;
 
 import com.deckxter.icorpdemo.dto.CustomerDTO;
+import com.deckxter.icorpdemo.dto.KpiDto;
 import com.deckxter.icorpdemo.service.CustomerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,9 +24,15 @@ public class CustomerController {
         customerService.save(customerDTO);
     }
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "")
     public List<CustomerDTO> findAllCustomers() {
         logger.debug("findAllCustomers");
         return customerService.findAll();
+    }
+
+    @GetMapping(path = "/kpi")
+    public KpiDto getKpiCustomers() {
+        logger.debug("getKpiCustomers");
+        return customerService.getKpiCustomers();
     }
 }
